@@ -1,0 +1,7 @@
+/* 1) Import your existing base.css first */
+/* @import './base.css'; */
+
+/* 2) Then bring in Tailwind’s layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
