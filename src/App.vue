@@ -1,31 +1,30 @@
 <template>
-  <div id="app" class="">
-    <!-- Navbar (fixed) -->
-    <Navbar />
+  <div id="app">
+    <!-- Only show Navbar if NOT on "/dashboard" or its sub-routes -->
+    <Navbar v-if="showNavFooter" />
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-      <router-view />
-    </main>
+    <!-- The router-matched component will go here -->
+    <router-view />
 
-    <!-- Footer (sticky to bottom) -->
-    <Footer />
+    <!-- Only show Footer if NOT on "/dashboard" or its sub-routes -->
+    <Footer v-if="showNavFooter" />
   </div>
 </template>
 
-<script>
-import Navbar from '@/components/Navbar.vue'
-import Footer  from '@/components/Footer.vue'
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 
-export default {
-  name: 'App',
-  components: {
-    Navbar,
-    Footer
-  }
-}
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
+
+// Grab the current route object
+const route = useRoute();
+
+// Only show navbar + footer when the path does NOT start with "/dashboard"
+const showNavFooter = computed(() => !route.path.startsWith('/dashboard'));
 </script>
 
 <style>
-/* global styles (if any) can go here */
+/* any global CSS… */
 </style>

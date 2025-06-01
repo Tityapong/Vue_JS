@@ -1,11 +1,11 @@
 <template>
-    <nav class="bg-white shadow-lg fixed w-full z-10">
-      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <nav class="fixed z-10 w-full bg-white shadow-lg">
+      <div class="container flex items-center justify-between px-4 py-4 mx-auto">
         <!-- Logo -->
         <router-link to="/" class="text-3xl font-extrabold text-gray-800">MyBrand</router-link>
   
         <!-- Desktop Links -->
-        <ul class="hidden md:flex space-x-8 text-gray-700">
+        <ul class="hidden space-x-8 text-gray-700 md:flex">
           <li>
             <router-link to="/" active-class="text-blue-600" class="hover:text-blue-600">
               Home
@@ -26,19 +26,23 @@
         <!-- Mobile Hamburger -->
         <button
           @click="open = !open"
-          class="md:hidden focus:outline-none text-gray-700"
+          class="text-gray-700 md:hidden focus:outline-none"
           aria-label="Toggle menu"
         >
-          <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+          <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+          
+          
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M6 18L18 6M6 6l12 12"/>
           </svg>
+          
+          
         </button>
       </div>
   
@@ -46,7 +50,7 @@
       <transition name="slide-fade">
         <ul
           v-show="open"
-          class="md:hidden bg-white border-t"
+          class="bg-white border-t md:hidden"
         >
           <li class="border-b">
             <router-link to="/" class="block px-4 py-3 hover:bg-gray-100">Home</router-link>
