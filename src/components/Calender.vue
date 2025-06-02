@@ -76,7 +76,7 @@
           <div
             v-for="(bar, i) in holidayBars"
             :key="i"
-            class="px-2 py-1 mx-1 overflow-hidden text-xs text-blue-800 bg-blue-100 rounded whitespace-nowrap"
+            class="h-12 px-2 py-2 mx-1 mt-10 overflow-hidden text-xs text-blue-800 bg-blue-100 rounded whitespace-nowrap"
             :style="{
               gridColumnStart: bar.colStart,
               gridColumnEnd: bar.colEnd,
