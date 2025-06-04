@@ -10,12 +10,18 @@ import DashboardLayout from '@/components/DashboardLayout.vue'
 import Overtime from '@/components/Overtime.vue'
 import AvailableDay from '@/components/AvailableDay.vue';
 import Calender from '@/components/Calender.vue'
+import Login from '@/components/Login.vue'
 
 const routes = [
   { path: '/',         component: Home },
   { path: '/about',    component: About },
   { path: '/contact',  component: Contact },
   { path: '/request',  component: Request },
+  {
+    path: '/login',
+    component: Login
+  },
+  
 
   { path: '/dashboard', component: DashboardLayout
   , children: [
