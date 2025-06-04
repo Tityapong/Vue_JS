@@ -19,7 +19,7 @@ const routes = [
 
   { path: '/dashboard', component: DashboardLayout
   , children: [
-      { path: 'overtime', component: Overtime  },
+      { path: 'ot', component: Overtime  },
       { path: 'available', component: AvailableDay },
       {path:'public-holiday' , component  : Calender}
 
